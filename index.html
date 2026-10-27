@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Senja - Kopi Susu Gula Aren Asli</title>
+    
+    <!-- 1. Memanggil Bootstrap 5 CSS (Lokal folder VS Code Anda & CDN Cadangan) -->
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist copy/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <!-- 2. MEMANGGIL FILE CSS EKSTERNAL DI FOLDER CSS/ -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<!-- Navigasi Utama (Bootstrap Fixed Navbar Warna Kuning Emas) -->
+<nav class="navbar navbar-expand-lg bg-warning fixed-top shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#beranda">☕ Kopi Senja</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama" aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#beranda">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Daftar Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeri">Galeri Varian</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Layanan
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#pesan">Pemesanan Online</a></li>
+            <li><a class="dropdown-item" href="#promo">Promo Mahasiswa</a></li>
+            <li><a class="dropdown-item" href="#kontak">Kemitraan Kedai</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#kontak">Bantuan Pelanggan</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" onsubmit="event.preventDefault(); alert('Mencari menu: ' + this.cari.value);">
+        <input class="form-control me-2" type="search" name="cari" placeholder="Cari varian kopi..." aria-label="Cari">
+        <button class="btn btn-outline-dark" type="submit">Cari</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+    <!-- Beranda / Hero Section: Foto di Kiri, Teks Promosi di Kanan -->
+    <header id="beranda" class="row align-items-center my-4 bg-white p-4 p-md-5 rounded-3 shadow-sm border">
+        <div class="col-12 col-md-auto text-center mb-3 mb-md-0 pe-md-4">
+            <!-- MEMANGGIL GAMBAR DI FOLDER Gambar/ -->
+            <img src="Gambar/kopi.jpg" class="img-fluid img-thumbnail img-hero" alt="Kopi Susu Gula Aren Senja" style="max-width: 200px; border-radius: 12px;">
+        </div>
+        <div class="col ps-md-3">
+            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fw-bold">🔥 Promo Terlaris Minggu Ini</span>
+            <h1 class="h2 mb-1 fw-bold">KOPI SUSU SENJA</h1>
+            <h6 class="text-muted">Cita Rasa Otentik Gula Aren Murni &ndash; Diseduh Segar Setiap Hari</h6>
+            <p class="mt-3 text-secondary">
+                Nikmati perpaduan sempurna antara biji kopi arabika pilihan Nusantara, susu sapi pasteurisasi segar, dan manisnya gula aren alami tanpa pemanis buatan. Hadir memberikan kelezatan dan energi untuk menemani aktivitas kuliah dan belajar Anda.
+            </p>
+            <a href="#pesan" class="btn btn-warning btn-lg mt-2 fw-bold shadow-sm">Pesan Sekarang Mulai Rp 15.000</a>
+        </div>
+        <hr class="mt-4">
+    </header>
+
+    <!-- Bagian A: Filosofi & Profil Usaha -->
+    <section id="tentang">
+        <h2>A. Filosofi &amp; Profil Kopi Senja</h2>
+        <div class="row align-items-start">
+            <div class="col">
+                <p><b>Kopi Senja</b> adalah usaha minuman racikan kopi modern yang didirikan untuk menghadirkan kopi susu berkualitas premium dengan harga yang ramah di kantong mahasiswa. Berawal dari kecintaan terhadap biji kopi lokal Indonesia, kami berkomitmen menyajikan racikan otentik tanpa bahan pengawet kimia.</p>
+                <p>Setiap gelas kopi kami racik menggunakan metode <i>espresso brewing</i> presisi tinggi, memastikan aroma kopi tetap kuat dan kelembutan susu menyatu harmonis. Halaman website ini dibangun menggunakan <b>Bootstrap 5</b> responsif untuk mempermudah pelanggan dalam melihat menu dan melakukan pemesanan langsung secara praktis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian B: Daftar Menu & Harga (Tabel Bootstrap dengan Hover & Header Darkslateblue) -->
+    <section id="menu">
+        <h2>B. Daftar Varian Menu &amp; Harga</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover align-middle shadow-sm">
+                <thead class="table-header">
+                    <tr>
+                        <th style="width: 50px;">No</th>
+                        <th>Nama Varian Kopi</th>
+                        <th>Komposisi Bahan</th>
+                        <th>Ukuran Botol</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td><b>Kopi Susu Gula Aren</b> <span class="badge bg-danger ms-1">Best Seller</span></td>
+                        <td>Espresso Arabika, Susu Segar, Gula Aren Organik Cair</td>
+                        <td>250 ml</td>
+                        <td class="fw-bold text-success">Rp 18.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td><b>Kopi Hitam Arabika Gayo</b></td>
+                        <td>Single Origin Arabika Gayo, Air Mineral Murni</td>
+                        <td>250 ml</td>
+                        <td class="fw-bold text-success">Rp 15.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td><b>Caramel Macchiato</b></td>
+                        <td>Espresso, Susu Segar, Sirup Vanila, Saus Karamel Manis</td>
+                        <td>250 ml</td>
+                        <td class="fw-bold text-success">Rp 22.000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td><b>Creamy Hazelnut Latte</b></td>
+                        <td>Espresso, Susu Pasteurisasi, Ekstrak Hazelnut Gurih</td>
+                        <td>250 ml</td>
+                        <td class="fw-bold text-success">Rp 22.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Bagian C: Keunggulan Produk (2 Kolom List UL & OL) -->
+    <section id="keunggulan">
+        <h2>C. Keunggulan &amp; Standar Mutu</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card p-3 h-100 shadow-sm border-0 bg-white">
+                    <h3 class="h5">1. Keunggulan Bahan Baku</h3>
+                    <ul>
+                        <li><b>100% Gula Aren Murni:</b> Didatangkan langsung dari petani aren lokal tanpa gula pasir rafinasi.</li>
+                        <li><b>Biji Kopi Grade A:</b> Biji kopi arabika berkualitas dengan proses <i>medium-dark roast</i> yang pas.</li>
+                        <li><b>Susu Pasteurisasi Segar:</b> Disimpan dalam suhu stabil untuk menjaga kehigienisan dan rasa <i>creamy</i>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3 h-100 shadow-sm border-0 bg-white">
+                    <h3 class="h5">2. Komitmen Layanan Kami</h3>
+                    <ol>
+                        <li><b>Freshly Brewed:</b> Kopi baru diseduh setelah pesanan masuk agar kesegaran terjamin.</li>
+                        <li><b>Kemasan Ramah Lingkungan:</b> Botol higienis yang aman dan mudah dibawa bepergian.</li>
+                        <li><b>Pengiriman Cepat:</b> Diantar dalam kondisi tetap dingin dan segar sampai di tangan Anda.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian D: Galeri Kartu Produk (Ada Efek Hover) -->
+    <section id="galeri">
+        <h2>D. Galeri Produk Terfavorit</h2>
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <div class="card h-100 card-produk shadow-sm">
+                    <img src="Gambar/kopisusuaren.jpeg" class="card-img-top" alt="Kopi Susu Aren" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Kopi Susu Aren</h5>
+                        <p class="card-text text-muted">Perpaduan klasik espresso pekat dengan manis legit aren asli dan gurihnya susu segar.</p>
+                        <span class="badge bg-warning text-dark">Rp 18.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100 card-produk shadow-sm">
+                    <img src="Gambar/caramelmacchiato.jpeg" class="card-img-top" alt="Caramel Macchiato" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Caramel Macchiato</h5>
+                        <p class="card-text text-muted">Sentuhan saus karamel lezat di atas susu lembut berpadu sempurna dengan aroma espresso.</p>
+                        <span class="badge bg-warning text-dark">Rp 22.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100 card-produk shadow-sm">
+                    <img src="Gambar/arabikagayoblack.jpeg" class="card-img-top" alt="Kopi Hitam Gayo" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Arabika Gayo Black</h5>
+                        <p class="card-text text-muted">Bagi Anda pecinta rasa kopi murni tanpa susu dengan aroma floral dan tingkat keasaman seimbang.</p>
+                        <span class="badge bg-warning text-dark">Rp 15.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian E: Promo Mahasiswa (Alert Warning) -->
+    <section id="promo">
+        <h2>E. Promo &amp; Informasi Pelanggan</h2>
+        <article class="card card-body mb-3 shadow-sm border-0">
+            <h3 class="h5">Paket Hemat Belajar &amp; Diskusi</h3>
+            <p class="mb-0">Dapatkan diskon khusus 10% untuk pemesanan rombongan kerja kelompok mahasiswa minimal 5 botol. Kopi siap diantar langsung ke area kampus!</p>
+        </article>
+        <aside class="alert alert-warning shadow-sm">
+            <strong>Catatan Mahasiswa:</strong> Tunjukkan Kartu Tanda Mahasiswa (KTM) aktif Anda saat pengambilan pesanan untuk mendapatkan gratis stiker eksklusif Kopi Senja!
+        </aside>
+    </section>
+
+    <!-- Bagian F: Formulir Pemesanan Lengkap (Type, Textarea, Radio, Dropdown, Checkbox) -->
+    <section id="pesan">
+        <h2>F. Form Pemesanan Kopi Senja</h2>
+        <p>Silakan isi data formulir berikut untuk memesan kopi favorit Anda:</p>
+
+        <div class="card p-4 shadow-sm border-0 bg-white col-lg-8 px-4">
+            <form id="formPemesanan">
+                
+                <!-- 1. Inputan Nama (Gunakan Type="text") -->
+                <div class="mb-3">
+                    <label for="fnama" class="form-label fw-bold">Nama Lengkap <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fnama" name="fnama" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+
+                <!-- 2. Inputan Email -->
+                <div class="mb-3">
+                    <label for="femail" class="form-label fw-bold">Alamat Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="femail" name="femail" placeholder="nama@email.com" required>
+                </div>
+
+                <!-- 3. Dropdown (Select) Varian Kopi -->
+                <div class="mb-3">
+                    <label for="fvarian" class="form-label fw-bold">Pilihan Varian Kopi <span class="text-danger">*</span></label>
+                    <select class="form-select" id="fvarian" name="fvarian" required>
+                        <option value="" selected disabled>-- Pilih Varian Kopi Favorit --</option>
+                        <option value="Kopi Susu Gula Aren">Kopi Susu Gula Aren (Rp 18.000)</option>
+                        <option value="Kopi Hitam Arabika Gayo">Kopi Hitam Arabika Gayo (Rp 15.000)</option>
+                        <option value="Caramel Macchiato">Caramel Macchiato (Rp 22.000)</option>
+                        <option value="Creamy Hazelnut Latte">Creamy Hazelnut Latte (Rp 22.000)</option>
+                    </select>
+                </div>
+
+                <!-- 4. Inputan Radio Button (Penyajian Suhu) -->
+                <div class="mb-3">
+                    <span class="form-label fw-bold d-block">Pilihan Penyajian Suhu <span class="text-danger">*</span></span>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="dingin" name="fsuhu" value="Dingin (Es)" checked>
+                        <label class="form-check-label" for="dingin">🧊 Dingin (Pakai Es)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="hangat" name="fsuhu" value="Hangat">
+                        <label class="form-check-label" for="hangat">☕ Hangat (Tanpa Es)</label>
+                    </div>
+                </div>
+
+                <!-- 5. Inputan Checkbox (Topping / Tambahan) -->
+                <div class="mb-3">
+                    <span class="form-label fw-bold d-block">Tambahan / Topping (Opsional)</span>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="jelly" name="ftopping" value="Coffee Jelly">
+                        <label class="form-check-label" for="jelly">Coffee Jelly (+Rp 3.000)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="shot" name="ftopping" value="Extra Espresso Shot">
+                        <label class="form-check-label" for="shot">Extra Shot Espresso (+Rp 4.000)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="lessSugar" name="ftopping" value="Less Sugar">
+                        <label class="form-check-label" for="lessSugar">Less Sugar (Gula Sedikit)</label>
+                    </div>
+                </div>
+
+                <!-- 6. Alamat Pengiriman (Tag Textarea) -->
+                <div class="mb-3">
+                    <label for="falamat" class="form-label fw-bold">Alamat Pengiriman Lengkap <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="falamat" name="falamat" rows="3" placeholder="Tuliskan alamat pengiriman atau nomor meja Anda di kedai..." required></textarea>
+                </div>
+
+                <!-- 7. Tombol Submit & Reset -->
+                <div class="mt-4">
+                    <button type="submit" id="btnKirim" class="btn btn-warning px-4 py-2 me-2">Kirim Pesanan</button>
+                    <button type="reset" class="btn btn-outline-secondary px-4 py-2">Batal</button>
+                </div>
+            </form>
+
+            <!-- Kotak Hasil Notifikasi Pemesanan (JavaScript DOM) -->
+            <div id="hasilPesanan" class="alert alert-success mt-4 shadow-sm" role="alert">
+                <h4 class="alert-heading fw-bold"> Pesanan Berhasil Dicatat!</h4>
+                <div id="isiKonfirmasi"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian G: Kontak Kedai -->
+    <section id="kontak">
+        <h2>G. Lokasi &amp; Kontak Kedai</h2>
+        <div class="card card-body shadow-sm border-0">
+            <p class="mb-1"> <b>Alamat Kedai:</b> Jl. Imam Bonjol No. 207, Pendrikan Kidul, Semarang Tengah (Area Kampus UDINUS)</p>
+            <p class="mb-1"><b>WhatsApp / Hotline:</b> +62 812-3563-5807</p>
+            <p class="mb-0"><b>Jam Operasional:</b> Buka Setiap Hari (Pukul 09.00 &ndash; 22.00 WIB)</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 8. FOOTER: NAMA & NIM LENGKAP -->
+    <footer class="text-center text-muted pb-4">
+        &copy; 2026 Kopi Senja &ndash; <b>Salsabila Prita Afiyanti</b> (NIM: <b>A12.2025.07365</b>) &ndash; Sistem Informasi, Universitas Dian Nuswantoro
+    </footer>
+
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="bootstrap-5.0.2-dist copy/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- MEMANGGIL FILE JAVASCRIPT EKSTERNAL DI FOLDER JS/ -->
+<script src="JS/script.js"></script>
+</body>
+</html>

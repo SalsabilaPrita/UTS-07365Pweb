@@ -1,0 +1,112 @@
+/* ==========================================================================
+   STYLE.CSS - PENGATURAN TAMPILAN & UNSUR HOVER
+   Folder: CSS/style.css
+   ========================================================================== */
+
+/* 1. Pengaturan Dasar Halaman */
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 75px; 
+}
+
+body { 
+    padding-top: 70px; 
+    background-color: #fcfbfa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. Warna Judul Darkslateblue Khas Praktikum */
+h2, h3 { 
+    color: darkslateblue; 
+    font-weight: 700;
+}
+
+.table-header th { 
+    background-color: darkslateblue; 
+    color: #fff; 
+}
+
+section { 
+    margin-bottom: 2.8rem; 
+}
+
+/* ==========================================================================
+   3. UNSUR HOVER (MEMENUHI SYARAT WAJIB TUGAS)
+   ========================================================================== */
+
+/* A. Hover pada Link Navigasi */
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000 !important;
+    transform: translateY(-2px);
+}
+
+/* B. Hover pada Kartu Produk (Efek Terangkat & Bayangan) */
+.card-produk {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.card-produk:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+    border-color: #ffc107;
+}
+
+/* C. Hover pada Baris Tabel Menu */
+.table-hover tbody tr:hover {
+    background-color: #fff9db !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* D. Hover pada Tombol Kuning */
+.btn-warning {
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-warning:hover {
+    background-color: #ffca2c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+/* E. Hover pada Foto Kopi Hero */
+.img-hero {
+    transition: transform 0.3s ease;
+}
+
+.img-hero:hover {
+    transform: scale(1.03);
+}
+
+/* Kotak Notifikasi Hasil Pemesanan */
+#hasilPesanan {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Membuat Dropdown Menu 'Layanan' Otomatis Terbuka Saat Disorot (Hover) */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.2s ease-in;
+}
+
+.dropdown-item:hover {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 600;
+}
